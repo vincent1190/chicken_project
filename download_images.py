@@ -4,6 +4,7 @@ import requests
 import cv2
 import os
 import sys
+import re
 
 ap=argparse.ArgumentParser()
 ap.add_argument("-u","--urls", required=False,
@@ -24,6 +25,7 @@ if args['urls'] is None:
 		sys.exit()
 	args['urls']=url_path
 
+
 if args['output'] is None:
 	# sets the path of a default picture folder
 	picture_dir=os.path.join(directory_folder,'chickens')
@@ -31,13 +33,36 @@ if args['output'] is None:
 	if not os.path.isdir(picture_dir):
 		# if it doesnt see the folder, it'll make it
 		os.makedirs(picture_dir)
+		total = 0
 	args['output']=picture_dir
+
+
+# checking to make sure that the folder can be appended
+# by checking the format of the last file in the folder\
+# if the format of the last file in the folder is set,
+# we set total to the number after the number of the last file
+picture_list=os.listdir(args['output'])
+if picture_list !=[]:
+	last=picture_list[-1].strip('.jpg')
+	match=re.match(r'\d\d\d\d\d\d\d\d',last)
+	if match is None:
+		print("picture file is in wrong format. format needs to have 8 digits with leading zeroes")
+		sys.exit()
+	else:
+		match_num=match.group(0)
+		if match_num.zfill(8)==last:
+			print("format seems good. Moving on")
+			total=int(last)
+			total+=1
+		else:
+			print("picture file is in wrong format. format needs to have 8 digits with leading zeroes")
+			sys.exit()
+
 
 # will read in the file as a whole
 # .strip will take out any white space from the begingging and end 
 rows = open(args["urls"]).read().strip().split("\n")
-total = 0
-count=0
+
 for url in rows:
 	try:
 		
