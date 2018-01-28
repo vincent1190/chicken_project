@@ -15,26 +15,26 @@ class bird_sounds:
                 pass
             else:
                 self.player.play()
-                print'playing sound'
+                print('playing sound')
         else:
             if self.player.playing:
                 self.player.pause()
-                print 'stopping sound'
+                print( 'stopping sound')
 
 # make a method that will shuffle up the queue a bit
 
 
 
 bird=bird_sounds()
-print' will now be playing the alarm'
+print(' will now be playing the alarm')
 bird.sees_bird=True
 bird.check_bird()
 time.sleep(2)
-print bird.player.playing
-print 'will now stop the player'
+print( bird.player.playing)
+print( 'will now stop the player')
 time.sleep(1)
 bird.sees_bird=False
 bird.check_bird()
-print bird.player.playing
-print 'the ennnnnnnnd.... for now at least'
-print 'next step is computer vision'
+print( bird.player.playing)
+print( 'the ennnnnnnnd.... for now at least')
+print( 'next step is computer vision')

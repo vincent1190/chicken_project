@@ -21,7 +21,7 @@ if args['urls'] is None:
 	if not os.path.exists(url_path):
 		# if the url.txt file is not in this then it will print this message
 		#  then terminate the program
-		print"\"url.txt\" not in the folder. Have url.txt file with lists of urls before running"
+		print("\"url.txt\" not in the folder. Have url.txt file with lists of urls before running")
 		sys.exit()
 	args['urls']=url_path
 
@@ -68,7 +68,7 @@ for url in rows:
 		
 		# try to download the image
 		r=requests.get(url, timeout=60)
-		print' request is done'
+		print(' request is done')
 
 		# save the image to disk
 		p=os.path.join(args["output"], "{}.jpg".format(str(total).zfill(8)))
