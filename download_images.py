@@ -28,7 +28,7 @@ if args['urls'] is None:
 
 if args['output'] is None:
 	# sets the path of a default picture folder
-	picture_dir=os.path.join(directory_folder,'chickens')
+	picture_dir=os.path.join(directory_folder,'images','chickens')
 	# checks to see if a folder called pictures exists
 	if not os.path.isdir(picture_dir):
 		# if it doesnt see the folder, it'll make it
