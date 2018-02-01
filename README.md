@@ -5,4 +5,4 @@ If there is a chicken in the frame,sounds of predators will be played as well as
 The goal of the project is to have the chickens associate the area with danger and stay away from it.
 
 This solution uses Pyglet for audio,Keras for model training/loading, and openCV for Computer Vision.
-Project is based on from  Adrian Rosebrock at  pyimagesearch.com
+Project is based on work from  Adrian Rosebrock at  pyimagesearch.com
