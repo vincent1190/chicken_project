@@ -59,7 +59,7 @@ class chicken_vision:
         print("[INFO] starting video stream...")
         self.path=r"D:\Scripts\chicken_project\chicken_video.mp4"
         # self.vs = VideoStream(src=self.path).start()
-        self.vs = VideoStream(src=0).start()
+        self.vs = VideoStream(src=self.path).start()
         # loop over the frames from the video stream
         while True:
 
@@ -71,7 +71,7 @@ class chicken_vision:
 
 
             # prepare the image to be classified by the deep learning network
-            self.image=cv2.resize(self.frame,(28,28))
+            self.image=cv2.resize(self.frame,(64,64))
 
             self.image=self.image.astype("float")/255.0
             self.image=img_to_array(self.image)
