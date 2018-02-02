@@ -45,7 +45,7 @@ class chicken_vision:
 
         # loading the trained CNN
         print("[INFO] loading model...")
-        self.model=load_model("chicken_not_chicken.model")
+        self.model=load_model("chicken_64_by_64_3rd_layer.model")
 
         # initialize the video stream and allow the camera sensor to warm up
         # print("[INFO] starting video stream...")
