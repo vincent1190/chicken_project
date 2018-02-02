@@ -53,7 +53,7 @@ random.shuffle(imagePaths)
 for imagePath in imagePaths:
 	# load the image, pre-process it, and store it in the data list
 	image=cv2.imread(imagePath)
-	image=cv2.resize(image,(28,28))
+	image=cv2.resize(image,(64,64))
 	image=img_to_array(image)
 	data.append(image)
 
@@ -83,7 +83,7 @@ aug=ImageDataGenerator(rotation_range=30, width_shift_range=0.1,
 
 # initialize the model
 print("[INFO] compiling model...")
-model=LeNet.build(width=28, height=28, depth=3, classes=2)
+model=LeNet.build(width=64, height=64, depth=3, classes=2)
 opt=Adam(lr=INIT_LR, decay=INIT_LR/EPOCHS)
 model.compile(loss="binary_crossentropy",optimizer=opt,
 	metrics=["accuracy"])

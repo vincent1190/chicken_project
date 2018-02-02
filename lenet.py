@@ -19,13 +19,13 @@ class LeNet:
 			inputShape = (depth, height, width)
 
 		# first set of CONV => RELU => POOL layers
-		model.add(Conv2D(20, (5, 5), padding="same",
+		model.add(Conv2D(20, (3, 3), padding="same",
 			input_shape=inputShape))
 		model.add(Activation("relu"))
 		model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
 
 		# second set of CONV => RELU => POOL layers
-		model.add(Conv2D(50, (5, 5), padding="same"))
+		model.add(Conv2D(50, (3, 3), padding="same"))
 		model.add(Activation("relu"))
 		model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
 
