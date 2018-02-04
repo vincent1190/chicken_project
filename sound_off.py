@@ -45,7 +45,7 @@ class chicken_vision:
 
         # loading the trained CNN
         print("[INFO] loading model...")
-        self.model=load_model("chicken_64_by_64_3rd_layer.model")
+        self.model=load_model("chicken_64_by_64_3rd_layer_with_even_more_data.model")
 
         # initialize the video stream and allow the camera sensor to warm up
         # print("[INFO] starting video stream...")
@@ -57,9 +57,9 @@ class chicken_vision:
     def video_loop(self):
 
         print("[INFO] starting video stream...")
-        self.path=r"D:\Scripts\chicken_project\chicken_video.mp4"
+        # self.path=r"D:\Scripts\chicken_project\chicken_video.mp4"
         # self.vs = VideoStream(src=self.path).start()
-        self.vs = VideoStream(src=self.path).start()
+        self.vs = VideoStream(src=0).start()
         # loop over the frames from the video stream
         while True:
 
