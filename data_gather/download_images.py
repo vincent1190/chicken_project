@@ -17,7 +17,7 @@ directory_folder=os.path.dirname(os.path.abspath(__file__))
 
 if args['urls'] is None:
 	# sets the path of a default url file
-	url_path=os.path.join(directory_folder,'urls.txt')
+	url_path=os.path.join(directory_folder,'urls_folder','urls.txt')
 	if not os.path.exists(url_path):
 		# if the url.txt file is not in this then it will print this message
 		#  then terminate the program

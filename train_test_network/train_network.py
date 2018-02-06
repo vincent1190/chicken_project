@@ -37,6 +37,12 @@ EPOCHS=25
 INIT_LR=1e-3
 BS=32
 
+if args["model"] is None:
+	args["model"]=r"D:\Scripts\chicken_project\models"
+
+if args["dataset"] is None:
+	args["dataset"]=r"D:\Scripts\chicken_project\data_gather\images"
+
 # initialize the data and labels
 print("[INFO] loading images...")
 data=[]

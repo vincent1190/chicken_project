@@ -10,6 +10,10 @@ import time
 import cv2
 import os
 
+'''
+make sure too add in parse arg functions
+'''
+
 class bird_sounds:
     def __init__(self):
         # initilizing the class
@@ -45,7 +49,7 @@ class chicken_vision:
 
         # loading the trained CNN
         print("[INFO] loading model...")
-        self.model=load_model("chicken_64_by_64_3rd_layer_with_even_more_data.model")
+        self.model=load_model("D:\Scripts\chicken_project\models\chicken_model.model")
 
         # initialize the video stream and allow the camera sensor to warm up
         # print("[INFO] starting video stream...")
